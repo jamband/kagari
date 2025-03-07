@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  gap: 0.1rem;
+}
+
+.textbox {
+  background: rgb(var(--gray-600) / 10%);
+  border: 1px solid rgb(var(--gray-600) / 10%);
+}
+
+.textbox:disabled {
+  cursor: not-allowed;
+}

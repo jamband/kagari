@@ -1,0 +1,30 @@
+.container {
+  background: rgb(var(--gray-200));
+  border-radius: 0 0 0.25rem 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.button {
+  color: rgb(var(--gray-400));
+  transition: background 0.2s, color 0.2s;
+}
+
+@media (any-hover: hover) {
+  .button:hover {
+    background: rgb(var(--gray-400) / 25%);
+    color: rgb(var(--gray-600));
+  }
+}
+
+.button:active,
+.button:focus-visible {
+  background: rgb(var(--gray-400) / 25%);
+  color: rgb(var(--gray-600));
+}
+
+.button:disabled {
+  color: rgb(var(--gray-400));
+}

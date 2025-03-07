@@ -1,0 +1,82 @@
+html {
+  background: rgb(var(--gray-100));
+  color: rgb(var(--gray-600));
+  font-family: system-ui, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (any-hover: hover) {
+  button:hover:disabled {
+    cursor: not-allowed;
+    background: transparent;
+  }
+}
+
+button:active:disabled {
+  background: transparent;
+}
+
+summary {
+  cursor: pointer;
+  user-select: none;
+}
+
+label {
+  color: rgb(var(--gray-600));
+  display: block;
+  margin: 0 0 0 0.1rem;
+}
+
+input[type="text"] {
+  border-radius: 0.25rem;
+  color: rgb(var(--gray-600));
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+textarea {
+  border-radius: 0.25rem;
+  color: rgb(var(--gray-600));
+  max-height: 15rem;
+  min-height: 7.5rem;
+  padding: 0.5rem 1rem;
+  resize: vertical;
+  width: 100%;
+}
+
+dialog {
+  background: none;
+  border: none;
+  max-height: none;
+  max-width: none;
+  overflow: visible;
+  padding: 0;
+  transition: 0.2s;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 30%);
+  transition: 0.2s;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+:focus {
+  outline: revert;
+}

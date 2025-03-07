@@ -1,0 +1,12 @@
+packages:
+  - packages/*
+
+catalog:
+  '@types/node': 20.17.23
+  hono: 4.7.4
+  typescript: 5.8.2
+  vite: 6.2.1
+
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - esbuild

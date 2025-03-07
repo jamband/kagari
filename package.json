@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm --parallel build",
+    "preview": "pnpm --parallel preview",
+    "check": "pnpm --parallel typecheck && biome check .",
+    "test": "pnpm --parallel test",
+    "clear": "pnpm --parallel clear",
+    "clean": "pnpm --parallel clean && node scripts/clean.js"
+  },
+  "engines": {
+    "pnpm": ">=10.6.1"
+  },
+  "dependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
+}

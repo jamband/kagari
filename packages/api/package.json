@@ -1,0 +1,33 @@
+{
+  "name": "api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/init.js",
+    "dev": "tsx watch --env-file=.env src/server.ts",
+    "build": "pnpm clear && tsc -p tsconfig.build.json",
+    "postbuild": "node --env-file=.env.staging scripts/postbuild.js",
+    "preview": "node --env-file=.env.staging dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest --run",
+    "clear": "node scripts/clear.js",
+    "clean": "node scripts/clean.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "1.13.8",
+    "@hono/standard-validator": "0.1.2",
+    "@libsql/client": "0.14.0",
+    "drizzle-orm": "0.40.0",
+    "hono": "catalog:",
+    "valibot": "1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "@standard-schema/spec": "1.0.0",
+    "@types/node": "catalog:",
+    "drizzle-kit": "0.30.5",
+    "tsx": "4.19.3",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "3.0.8"
+  }
+}

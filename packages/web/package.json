@@ -1,0 +1,21 @@
+{
+  "name": "web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/init.js",
+    "dev": "vite --port=3000 --open",
+    "build": "vite build --target=es2022",
+    "preview": "vite preview --port=3000 --open",
+    "typecheck": "tsc",
+    "clear": "node scripts/clear.js",
+    "clean": "node scripts/clean.js"
+  },
+  "dependencies": {
+    "@types/node": "catalog:",
+    "hono": "catalog:",
+    "the-new-css-reset": "1.11.3",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}

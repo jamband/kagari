@@ -1,0 +1,6 @@
+.container {
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  line-height: 1.2;
+  padding: 0.5rem 0.75rem;
+}

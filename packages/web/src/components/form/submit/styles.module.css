@@ -1,0 +1,21 @@
+.container {
+  color: rgb(var(--gray-400));
+  transition: background 0.2s, color 0.2s;
+}
+
+@media (any-hover: hover) {
+  .container:hover {
+    background: rgb(var(--gray-600) / 10%);
+    color: rgb(var(--gray-600));
+  }
+}
+
+.container:active,
+.container:focus-visible {
+  background: rgb(var(--gray-600) / 10%);
+  color: rgb(var(--gray-600));
+}
+
+.container:disabled {
+  color: rgb(var(--gray-400));
+}
