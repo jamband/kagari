@@ -2,7 +2,7 @@ packages:
   - packages/*
 
 catalog:
-  '@types/node': 20.17.23
+  '@types/node': 22.13.9
   hono: 4.7.4
   typescript: 5.8.2
   vite: 6.2.1
