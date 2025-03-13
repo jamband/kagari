@@ -3,17 +3,8 @@
   "files": {
     "ignore": ["packages/api/db", "packages/api/dist", "packages/web/dist"]
   },
-  "organizeImports": {
-    "enabled": true
-  },
   "formatter": {
     "indentStyle": "space"
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
   },
   "overrides": [
     {
