@@ -2,10 +2,10 @@ packages:
   - packages/*
 
 catalog:
-  '@types/node': 22.13.11
+  '@types/node': 22.13.14
   hono: 4.7.5
   typescript: 5.8.2
-  vite: 6.2.2
+  vite: 6.2.3
 
 onlyBuiltDependencies:
   - '@biomejs/biome'
