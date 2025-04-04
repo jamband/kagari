@@ -16,7 +16,7 @@
   "dependencies": {
     "@hono/node-server": "1.14.0",
     "@hono/standard-validator": "0.1.2",
-    "@libsql/client": "0.15.1",
+    "@libsql/client": "0.15.2",
     "drizzle-orm": "0.41.0",
     "hono": "catalog:",
     "valibot": "1.0.0"
@@ -28,6 +28,6 @@
     "tsx": "4.19.3",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "3.0.9"
+    "vitest": "3.1.1"
   }
 }
