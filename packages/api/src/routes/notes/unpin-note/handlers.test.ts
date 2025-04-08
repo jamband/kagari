@@ -8,6 +8,13 @@ import notes from "../../../db/schema/notes.js";
 import type { InvalidResponseBody } from "../../../types/response.js";
 
 describe("PATCH /notes/:id/unpin", () => {
+  test("403", async () => {
+    const res = await app.request("/notes/1/unpin", {
+      method: "PATCH",
+    });
+    expect(res.status).toBe(403);
+  });
+
   test("404", async () => {
     const res = await app.request("/notes/1/unpin", {
       method: "PATCH",

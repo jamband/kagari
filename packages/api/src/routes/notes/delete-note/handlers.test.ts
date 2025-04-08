@@ -7,6 +7,13 @@ import notes from "../../../db/schema/notes.js";
 import type { InvalidResponseBody } from "../../../types/response.js";
 
 describe("DELETE /notes/:id", () => {
+  test("403", async () => {
+    const res = await app.request("/notes/1", {
+      method: "DELETE",
+    });
+    expect(res.status).toBe(403);
+  });
+
   test("404", async () => {
     const res = await app.request("/notes/1", {
       method: "DELETE",

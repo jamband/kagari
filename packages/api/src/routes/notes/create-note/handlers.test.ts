@@ -10,6 +10,13 @@ import type { NoteResponseBody } from "../response.js";
 import type { CreateNoteJsonRequest } from "./request.js";
 
 describe("POST /notes", () => {
+  test("403", async () => {
+    const res = await app.request("/notes", {
+      method: "POST",
+    });
+    expect(res.status).toBe(403);
+  });
+
   test("422", async () => {
     const res = await app.request("/notes", {
       method: "POST",

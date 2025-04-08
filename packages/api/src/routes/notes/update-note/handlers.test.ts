@@ -10,6 +10,13 @@ import type { NoteResponseBody } from "../response.js";
 import type { UpdateNoteJsonRequest } from "./request.js";
 
 describe("PUT /notes/:id", () => {
+  test("403", async () => {
+    const res = await app.request("/notes/1", {
+      method: "PUT",
+    });
+    expect(res.status).toBe(403);
+  });
+
   test("422", async () => {
     const res = await app.request("/notes/1", {
       method: "PUT",
