@@ -5,7 +5,6 @@ import { describe, expect, test } from "vitest";
 import { app } from "../../../app.js";
 import db from "../../../db/client.js";
 import notes from "../../../db/schema/notes.js";
-import { WEB_URL } from "../../../env.js";
 import type { InvalidResponseBody } from "../../../types/response.js";
 import type { NoteResponseBody } from "../response.js";
 import type { UpdateNoteJsonRequest } from "./request.js";
@@ -14,7 +13,8 @@ describe("PUT /notes/:id", () => {
   test("422", async () => {
     const res = await app.request("/notes/1", {
       method: "PUT",
-      headers: { origin: WEB_URL },
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({}),
     });
     expect(res.status).toBe(422);
   });

@@ -5,7 +5,7 @@ import { describe, expect, test } from "vitest";
 import { app } from "../../../app.js";
 import db from "../../../db/client.js";
 import notes from "../../../db/schema/notes.js";
-import { APP_URL, WEB_URL } from "../../../env.js";
+import { APP_URL } from "../../../env.js";
 import type { NoteResponseBody } from "../response.js";
 import type { CreateNoteJsonRequest } from "./request.js";
 
@@ -13,7 +13,8 @@ describe("POST /notes", () => {
   test("422", async () => {
     const res = await app.request("/notes", {
       method: "POST",
-      headers: { origin: WEB_URL },
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({}),
     });
     expect(res.status).toBe(422);
   });

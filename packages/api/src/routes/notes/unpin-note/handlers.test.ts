@@ -5,14 +5,13 @@ import { describe, expect, test } from "vitest";
 import { app } from "../../../app.js";
 import db from "../../../db/client.js";
 import notes from "../../../db/schema/notes.js";
-import { WEB_URL } from "../../../env.js";
 import type { InvalidResponseBody } from "../../../types/response.js";
 
 describe("PATCH /notes/:id/unpin", () => {
   test("404", async () => {
     const res = await app.request("/notes/1/unpin", {
       method: "PATCH",
-      headers: { origin: WEB_URL },
+      headers: { "content-type": "application/json" },
     });
     expect(res.status).toBe(404);
     expect(await res.json()).toEqual<InvalidResponseBody>({
@@ -29,7 +28,7 @@ describe("PATCH /notes/:id/unpin", () => {
 
     const res = await app.request("/notes/2/unpin", {
       method: "PATCH",
-      headers: { origin: WEB_URL },
+      headers: { "content-type": "application/json" },
     });
     expect(res.status).toBe(204);
     expect(res.body).toBe(null);
