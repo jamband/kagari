@@ -39,7 +39,7 @@ describe("PUT /notes/:id", () => {
     expect(await db.$count(notes)).toBe(1);
 
     const res = await app.request("/notes/1", {
-      method: "put",
+      method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         title: "t2",
