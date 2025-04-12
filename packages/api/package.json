@@ -14,9 +14,9 @@
     "clean": "node scripts/clean.js"
   },
   "dependencies": {
-    "@hono/node-server": "1.14.0",
+    "@hono/node-server": "1.14.1",
     "@hono/standard-validator": "0.1.2",
-    "@libsql/client": "0.15.2",
+    "@libsql/client": "0.15.3",
     "drizzle-orm": "0.41.0",
     "hono": "catalog:",
     "valibot": "1.0.0"
