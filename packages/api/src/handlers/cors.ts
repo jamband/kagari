@@ -1,8 +1,8 @@
 import { cors as honoCors } from "hono/cors";
-import { WEB_URL } from "../env.js";
+import env from "../env.js";
 
 const cors = honoCors({
-  origin: WEB_URL,
+  origin: env.WEB_URL,
   allowMethods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowHeaders: ["Accept", "Content-Type"],
   exposeHeaders: [],

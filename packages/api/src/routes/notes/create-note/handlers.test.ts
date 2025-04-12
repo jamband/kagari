@@ -5,7 +5,7 @@ import { describe, expect, test } from "vitest";
 import { app } from "../../../app.js";
 import db from "../../../db/client.js";
 import notes from "../../../db/schema/notes.js";
-import { APP_URL } from "../../../env.js";
+import env from "../../../env.js";
 import type { NoteResponseBody } from "../response.js";
 import type { CreateNoteJsonRequest } from "./request.js";
 
@@ -39,7 +39,7 @@ describe("POST /notes", () => {
     });
 
     expect(res.status).toBe(201);
-    expect(res.headers.get("location")).toBe(`${APP_URL}/notes/1`);
+    expect(res.headers.get("location")).toBe(`${env.APP_URL}/notes/1`);
     expect(await res.json()).toEqual<NoteResponseBody>({
       id: 1,
       title: "t1",

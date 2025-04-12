@@ -2,7 +2,7 @@ import { desc, eq } from "drizzle-orm";
 import type { SQLiteColumn } from "drizzle-orm/sqlite-core";
 import db from "../../db/client.js";
 import notes from "../../db/schema/notes.js";
-import { NOTE_RECORD_LIMIT } from "../../env.js";
+import env from "../../env.js";
 
 type NoteSelect = typeof notes.$inferSelect;
 type NoteInsert = typeof notes.$inferInsert;
@@ -83,5 +83,5 @@ export async function unpinNote(id: NoteId) {
 }
 
 export async function canCreateNote() {
-  return NOTE_RECORD_LIMIT >= (await db.$count(notes));
+  return env.NOTE_RECORD_LIMIT >= (await db.$count(notes));
 }

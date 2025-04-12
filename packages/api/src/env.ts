@@ -1,7 +1,7 @@
 import type { Context } from "hono";
-import { env } from "hono/adapter";
+import { env as honoEnv } from "hono/adapter";
 
-const variables = env<{
+const env = honoEnv<{
   APP_URL: string;
   LOG_LEVEL: "debug" | "info" | "notice" | "error";
   WEB_URL: string;
@@ -9,8 +9,4 @@ const variables = env<{
   NOTE_RECORD_LIMIT: number;
 }>({} as Context);
 
-export const { APP_URL } = variables;
-export const { WEB_URL } = variables;
-export const { LOG_LEVEL } = variables;
-export const { DATABASE_URL } = variables;
-export const { NOTE_RECORD_LIMIT } = variables;
+export default env;
