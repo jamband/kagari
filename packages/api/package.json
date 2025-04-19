@@ -16,15 +16,15 @@
   "dependencies": {
     "@hono/node-server": "1.14.1",
     "@hono/standard-validator": "0.1.2",
-    "@libsql/client": "0.15.3",
-    "drizzle-orm": "0.41.0",
+    "@libsql/client": "0.15.4",
+    "drizzle-orm": "0.42.0",
     "hono": "catalog:",
     "valibot": "1.0.0"
   },
   "devDependencies": {
     "@standard-schema/spec": "1.0.0",
     "@types/node": "catalog:",
-    "drizzle-kit": "0.30.6",
+    "drizzle-kit": "0.31.0",
     "tsx": "4.19.3",
     "typescript": "catalog:",
     "vite": "catalog:",
