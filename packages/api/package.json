@@ -14,20 +14,20 @@
     "clean": "node scripts/clean.js"
   },
   "dependencies": {
-    "@hono/node-server": "1.14.1",
+    "@hono/node-server": "1.14.4",
     "@hono/standard-validator": "0.1.2",
-    "@libsql/client": "0.15.4",
-    "drizzle-orm": "0.43.1",
+    "@libsql/client": "0.15.8",
+    "drizzle-orm": "0.44.2",
     "hono": "catalog:",
-    "valibot": "1.0.0"
+    "valibot": "1.1.0"
   },
   "devDependencies": {
     "@standard-schema/spec": "1.0.0",
     "@types/node": "catalog:",
-    "drizzle-kit": "0.31.0",
-    "tsx": "4.19.3",
+    "drizzle-kit": "0.31.1",
+    "tsx": "4.19.4",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "3.1.2"
+    "vitest": "3.2.2"
   }
 }
