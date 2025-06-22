@@ -6,9 +6,7 @@ import type { Note, PinNoteForm, UnpinNoteForm } from "../../../types/notes";
 import $button from "../../button";
 import styles from "./styles.module.css";
 
-export default function $noteActions(props: {
-  note: Note;
-}) {
+export default function $noteActions(props: { note: Note }) {
   const $container = document.createElement("div");
   $container.className = styles.container;
 

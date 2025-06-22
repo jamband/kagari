@@ -34,7 +34,9 @@
   color: rgb(var(--gray-400));
   line-height: 0;
   padding: 0.5rem;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 @media (any-hover: hover) {

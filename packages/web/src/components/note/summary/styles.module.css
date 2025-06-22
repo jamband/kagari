@@ -36,7 +36,9 @@ details[data-name="note"][open] .container {
   color: rgb(var(--gray-400));
   height: 1rem;
   margin: 0.275rem 0 0 auto;
-  transition: transform 0.2s, color 0.2s;
+  transition:
+    transform 0.2s,
+    color 0.2s;
   width: 1rem;
 }
 

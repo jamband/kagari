@@ -2,9 +2,7 @@ import type { Note } from "../../../types/notes";
 import $iconPlus from "../../icon/plus";
 import styles from "./styles.module.css";
 
-export default function $noteSummary(props: {
-  note: Note;
-}) {
+export default function $noteSummary(props: { note: Note }) {
   const $container = document.createElement("summary");
   $container.className = styles.container;
 

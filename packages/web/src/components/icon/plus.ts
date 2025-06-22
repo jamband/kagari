@@ -1,8 +1,6 @@
 import $baseIcon from "./_base";
 
-export default function $iconPlus(props: {
-  className: string;
-}) {
+export default function $iconPlus(props: { className: string }) {
   const $path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   $path.setAttribute(
     "d",

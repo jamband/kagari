@@ -1,22 +1,6 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "files": {
-    "ignore": ["packages/api/db", "packages/api/dist", "packages/web/dist"]
-  },
   "formatter": {
     "indentStyle": "space"
-  },
-  "overrides": [
-    {
-      "include": ["scripts/**", "packages/api/**", "packages/web/**"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noUnusedImports": "error",
-            "noUnusedVariables": "error"
-          }
-        }
-      }
-    }
-  ]
+  }
 }

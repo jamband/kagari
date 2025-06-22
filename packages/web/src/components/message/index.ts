@@ -1,8 +1,6 @@
 import styles from "./styles.module.css";
 
-export default function $message(props: {
-  textContent: string;
-}) {
+export default function $message(props: { textContent: string }) {
   const $container = document.createElement("div");
   $container.role = "alert";
   $container.className = styles.container;
