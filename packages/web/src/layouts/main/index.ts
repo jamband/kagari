@@ -17,7 +17,7 @@ export default async function $main() {
         const textContent = `you can only create ${NOTE_RECORD_LIMIT} notes`;
         $container.append($message({ textContent }));
       }
-      collection.data.map((note) => {
+      collection.data.forEach((note) => {
         $container.append($note({ note }));
       });
     }
