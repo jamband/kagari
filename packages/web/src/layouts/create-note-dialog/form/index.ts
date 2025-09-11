@@ -1,3 +1,4 @@
+import { parseResponse } from "hono/client";
 import { notesClient } from "../../../clients/notes";
 import $form from "../../../components/form";
 import $formActions from "../../../components/form/actions";
@@ -6,7 +7,8 @@ import $formTextarea from "../../../components/form/textarea";
 import $formTextbox from "../../../components/form/textbox";
 import { modestAction } from "../../../helpers/action";
 import { $ } from "../../../helpers/query";
-import type { CreateNoteForm } from "../../../types/notes";
+import type { Feedback } from "../../../types/feedback";
+import type { CreateNoteForm, CreateNoteRequest } from "../../../types/notes";
 
 export default function $createNoteForm() {
   const $container = $form({
@@ -39,13 +41,14 @@ export default function $createNoteForm() {
     modestAction($submit);
 
     const data = Object.fromEntries(new FormData($container)) as CreateNoteForm;
-    const res = await notesClient.$post({
-      json: data,
-    });
 
-    if (res.status === 422) {
-      const feedback = await res.json();
-      if ("message" in feedback && typeof feedback.message === "object") {
+    const result = await parseResponse(
+      notesClient.$post({
+        json: data,
+      }),
+    ).catch((error: Feedback<CreateNoteRequest["json"]>) => {
+      if (error.statusCode === 422) {
+        const feedback = error.detail.data;
         const $titleFeedback = $("#createNoteTitleFeedback");
         const $contentFeedback = $("#createNoteContentFeedback");
 
@@ -54,8 +57,9 @@ export default function $createNoteForm() {
           $contentFeedback.textContent = feedback.message.content || "";
         }
       }
-    }
-    if (res.ok) {
+    });
+
+    if (result) {
       window.location.reload();
     }
   });

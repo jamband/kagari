@@ -1,3 +1,4 @@
+import { parseResponse } from "hono/client";
 import { notesIdClient } from "../../../clients/notes";
 import { modestAction } from "../../../helpers/action";
 import dialog from "../../../helpers/dialog";
@@ -24,15 +25,11 @@ export default function $noteActions(props: { note: Note }) {
     } satisfies PinNoteForm | UnpinNoteForm;
 
     if (props.note.pin) {
-      const res = await notesIdClient.unpin.$patch(input);
-      if (res.ok) {
-        window.location.reload();
-      }
+      await parseResponse(notesIdClient.unpin.$patch(input));
+      window.location.reload();
     } else {
-      const res = await notesIdClient.pin.$patch(input);
-      if (res.ok) {
-        window.location.reload();
-      }
+      await parseResponse(notesIdClient.pin.$patch(input));
+      window.location.reload();
     }
   });
 

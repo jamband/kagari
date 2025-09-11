@@ -6,7 +6,7 @@ import { app } from "../../../app.js";
 import db from "../../../db/client.js";
 import notes from "../../../db/schema/notes.js";
 import type { InvalidResponseBody } from "../../../types/response.js";
-import type { NoteResponseBody } from "../response.js";
+import type { NotesMaskedFields } from "../note.js";
 import type { UpdateNoteJsonRequest } from "./request.js";
 
 describe("PUT /notes/:id", () => {
@@ -54,7 +54,7 @@ describe("PUT /notes/:id", () => {
       } satisfies UpdateNoteJsonRequest),
     });
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual<NoteResponseBody>({
+    expect(await res.json()).toEqual<NotesMaskedFields>({
       id: 1,
       title: "t2",
       content: "c2",
@@ -64,7 +64,7 @@ describe("PUT /notes/:id", () => {
     expect(await db.$count(notes)).toBe(1);
     expect(
       await db.select().from(notes).where(eq(notes.id, 1)).get(),
-    ).toMatchObject<NoteResponseBody>({
+    ).toMatchObject<NotesMaskedFields>({
       id: 1,
       title: "t2",
       content: "c2",

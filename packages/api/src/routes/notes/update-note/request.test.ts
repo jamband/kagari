@@ -1,8 +1,10 @@
 import { describe, expect, test } from "vitest";
 import { app } from "../../../app.js";
-import type { InvalidResponseBody } from "../../../types/response.js";
+import type {
+  InvalidJsonResponseBody,
+  InvalidResponseBody,
+} from "../../../types/response.js";
 import type { UpdateNoteJsonRequest } from "./request.js";
-import type { UpdateNoteInvalidJsonResponseBody } from "./response.js";
 
 describe("param", () => {
   test("id", async () => {
@@ -28,14 +30,18 @@ describe("json", () => {
 
   test("title: nonEmpty", async () => {
     const res = await request({ title: "" });
-    expect(await res.json()).toMatchObject<UpdateNoteInvalidJsonResponseBody>({
+    expect(await res.json()).toMatchObject<
+      InvalidJsonResponseBody<UpdateNoteJsonRequest>
+    >({
       message: { title: "this field is required" },
     });
   });
 
   test("content: nonEmpty", async () => {
     const res = await request({ content: "" });
-    expect(await res.json()).toMatchObject<UpdateNoteInvalidJsonResponseBody>({
+    expect(await res.json()).toMatchObject<
+      InvalidJsonResponseBody<UpdateNoteJsonRequest>
+    >({
       message: { content: "this field is required" },
     });
   });

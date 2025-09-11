@@ -3,7 +3,6 @@ import { HTTPException } from "hono/http-exception";
 import validator from "../../../handlers/validator.js";
 import { getNote, updateNote } from "../note.js";
 import { updateNoteJsonRequest, updateNoteParamRequest } from "./request.js";
-import type { UpdateNoteResponseBody } from "./response.js";
 
 const factory = createFactory();
 
@@ -16,7 +15,7 @@ const updateNoteHandlers = factory.createHandlers(
     const json = c.req.valid("json");
     const note = await getNote(param.id);
     if (!note) throw new HTTPException(404);
-    return c.json<UpdateNoteResponseBody>(await updateNote(note.id, json));
+    return c.json(await updateNote(note.id, json));
   },
 );
 

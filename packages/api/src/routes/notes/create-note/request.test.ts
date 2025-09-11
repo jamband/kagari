@@ -4,8 +4,8 @@ import { describe, expect, test } from "vitest";
 import { app } from "../../../app.js";
 import db from "../../../db/client.js";
 import notes from "../../../db/schema/notes.js";
+import type { InvalidJsonResponseBody } from "../../../types/response.js";
 import type { CreateNoteJsonRequest } from "./request.js";
-import type { CreateNoteInvalidJsonResponseBody } from "./response.js";
 
 describe("json", () => {
   const request = (body: Partial<CreateNoteJsonRequest>) => {
@@ -18,7 +18,9 @@ describe("json", () => {
 
   test("title: nonEmpty", async () => {
     const res = await request({ title: "" });
-    expect(await res.json()).toMatchObject<CreateNoteInvalidJsonResponseBody>({
+    expect(await res.json()).toMatchObject<
+      InvalidJsonResponseBody<CreateNoteJsonRequest>
+    >({
       message: { title: "this field is required" },
     });
   });
@@ -32,14 +34,18 @@ describe("json", () => {
     ]);
 
     const res = await request({ title: "foo" });
-    expect(await res.json()).toMatchObject<CreateNoteInvalidJsonResponseBody>({
+    expect(await res.json()).toMatchObject<
+      InvalidJsonResponseBody<CreateNoteJsonRequest>
+    >({
       message: { title: "you cannot create any more notes" },
     });
   });
 
   test("content: nonEmpty", async () => {
     const res = await request({ content: "" });
-    expect(await res.json()).toMatchObject<CreateNoteInvalidJsonResponseBody>({
+    expect(await res.json()).toMatchObject<
+      InvalidJsonResponseBody<CreateNoteJsonRequest>
+    >({
       message: { content: "this field is required" },
     });
   });

@@ -6,7 +6,7 @@ import { app } from "../../../app.js";
 import db from "../../../db/client.js";
 import notes from "../../../db/schema/notes.js";
 import env from "../../../env.js";
-import type { NoteResponseBody } from "../response.js";
+import type { NotesMaskedFields } from "../note.js";
 import type { CreateNoteJsonRequest } from "./request.js";
 
 describe("POST /notes", () => {
@@ -40,7 +40,7 @@ describe("POST /notes", () => {
 
     expect(res.status).toBe(201);
     expect(res.headers.get("location")).toBe(`${env.APP_URL}/notes/1`);
-    expect(await res.json()).toEqual<NoteResponseBody>({
+    expect(await res.json()).toEqual<NotesMaskedFields>({
       id: 1,
       title: "t1",
       content: "c1",
@@ -51,7 +51,7 @@ describe("POST /notes", () => {
     const query = db.select().from(notes);
     expect(
       await query.where(eq(notes.id, 1)).get(),
-    ).toMatchObject<NoteResponseBody>({
+    ).toMatchObject<NotesMaskedFields>({
       id: 1,
       title: "t1",
       content: "c1",

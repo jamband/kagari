@@ -1,3 +1,4 @@
+import { parseResponse } from "hono/client";
 import { notesIdClient } from "../../../clients/notes";
 import $form from "../../../components/form";
 import $formActions from "../../../components/form/actions";
@@ -7,7 +8,8 @@ import $formTextarea from "../../../components/form/textarea";
 import $formTextbox from "../../../components/form/textbox";
 import { modestAction } from "../../../helpers/action";
 import { $ } from "../../../helpers/query";
-import type { UpdateNoteForm } from "../../../types/notes";
+import type { Feedback } from "../../../types/feedback";
+import type { UpdateNoteForm, UpdateNoteRequest } from "../../../types/notes";
 
 export default function $updateNoteForm() {
   const $container = $form({
@@ -44,14 +46,15 @@ export default function $updateNoteForm() {
     modestAction($submit);
 
     const data = Object.fromEntries(new FormData($container)) as UpdateNoteForm;
-    const res = await notesIdClient.$put({
-      param: { id: data.id },
-      json: data,
-    });
 
-    if (res.status === 422) {
-      const feedback = await res.json();
-      if ("message" in feedback && typeof feedback.message === "object") {
+    const result = await parseResponse(
+      notesIdClient.$put({
+        param: { id: data.id },
+        json: data,
+      }),
+    ).catch((error: Feedback<UpdateNoteRequest["json"]>) => {
+      if (error.statusCode === 422) {
+        const feedback = error.detail.data;
         const $titleFeedback = $("#updateNoteTitleFeedback");
         const $contentFeedback = $("#updateNoteContentFeedback");
 
@@ -60,8 +63,9 @@ export default function $updateNoteForm() {
           $contentFeedback.textContent = feedback.message.content || "";
         }
       }
-    }
-    if (res.ok) {
+    });
+
+    if (result) {
       window.location.reload();
     }
   });

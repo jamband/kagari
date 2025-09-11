@@ -1,3 +1,4 @@
+import { parseResponse } from "hono/client";
 import { notesIdClient } from "../../../clients/notes";
 import $form from "../../../components/form";
 import $formActions from "../../../components/form/actions";
@@ -56,13 +57,14 @@ export default function $deleteNoteForm() {
     modestAction($submit);
 
     const data = Object.fromEntries(new FormData($container)) as DeleteNoteForm;
-    const res = await notesIdClient.$delete({
-      param: { id: data.id },
-    });
 
-    if (res.ok) {
-      window.location.reload();
-    }
+    await parseResponse(
+      notesIdClient.$delete({
+        param: { id: data.id },
+      }),
+    );
+
+    window.location.reload();
   });
 
   return $container;
