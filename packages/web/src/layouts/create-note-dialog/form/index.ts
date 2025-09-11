@@ -8,7 +8,7 @@ import $formTextbox from "../../../components/form/textbox";
 import { modestAction } from "../../../helpers/action";
 import { $ } from "../../../helpers/query";
 import type { Feedback } from "../../../types/feedback";
-import type { CreateNoteForm, CreateNoteRequest } from "../../../types/notes";
+import type { CreateNoteRequest } from "../../../types/notes";
 
 export default function $createNoteForm() {
   const $container = $form({
@@ -40,7 +40,9 @@ export default function $createNoteForm() {
     event.preventDefault();
     modestAction($submit);
 
-    const data = Object.fromEntries(new FormData($container)) as CreateNoteForm;
+    const data = Object.fromEntries(
+      new FormData($container),
+    ) as CreateNoteRequest["json"];
 
     const result = await parseResponse(
       notesClient.$post({

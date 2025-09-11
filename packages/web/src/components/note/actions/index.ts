@@ -3,7 +3,11 @@ import { notesIdClient } from "../../../clients/notes";
 import { modestAction } from "../../../helpers/action";
 import dialog from "../../../helpers/dialog";
 import { $ } from "../../../helpers/query";
-import type { Note, PinNoteForm, UnpinNoteForm } from "../../../types/notes";
+import type {
+  Note,
+  PinNoteRequest,
+  UnpinNoteRequest,
+} from "../../../types/notes";
 import $button from "../../button";
 import styles from "./styles.module.css";
 
@@ -22,7 +26,7 @@ export default function $noteActions(props: { note: Note }) {
 
     const input = {
       param: { id: `${props.note.id}` },
-    } satisfies PinNoteForm | UnpinNoteForm;
+    } satisfies PinNoteRequest | UnpinNoteRequest;
 
     if (props.note.pin) {
       await parseResponse(notesIdClient.unpin.$patch(input));

@@ -9,7 +9,7 @@ import $formTextbox from "../../../components/form/textbox";
 import { modestAction } from "../../../helpers/action";
 import { $ } from "../../../helpers/query";
 import type { Feedback } from "../../../types/feedback";
-import type { UpdateNoteForm, UpdateNoteRequest } from "../../../types/notes";
+import type { UpdateNoteRequest } from "../../../types/notes";
 
 export default function $updateNoteForm() {
   const $container = $form({
@@ -45,7 +45,9 @@ export default function $updateNoteForm() {
     event.preventDefault();
     modestAction($submit);
 
-    const data = Object.fromEntries(new FormData($container)) as UpdateNoteForm;
+    const data = Object.fromEntries(
+      new FormData($container),
+    ) as UpdateNoteRequest["json"] & UpdateNoteRequest["param"];
 
     const result = await parseResponse(
       notesIdClient.$put({

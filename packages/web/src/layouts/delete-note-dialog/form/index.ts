@@ -10,7 +10,7 @@ import $formTextbox from "../../../components/form/textbox";
 import { modestAction } from "../../../helpers/action";
 import dialog from "../../../helpers/dialog";
 import { $ } from "../../../helpers/query";
-import type { DeleteNoteForm } from "../../../types/notes";
+import type { DeleteNoteRequest } from "../../../types/notes";
 
 export default function $deleteNoteForm() {
   const $container = $form({
@@ -56,7 +56,9 @@ export default function $deleteNoteForm() {
     event.preventDefault();
     modestAction($submit);
 
-    const data = Object.fromEntries(new FormData($container)) as DeleteNoteForm;
+    const data = Object.fromEntries(
+      new FormData($container),
+    ) as DeleteNoteRequest["param"];
 
     await parseResponse(
       notesIdClient.$delete({
