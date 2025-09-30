@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "postinstall": "node scripts/init.js",
-    "dev": "vite --port=3000 --open",
+    "dev": "vite --port=3000",
     "build": "vite build --target=es2022",
-    "preview": "vite preview --port=3000 --open",
+    "preview": "vite preview --port=3000",
     "typecheck": "tsc",
     "clear": "node scripts/clear.js",
     "clean": "node scripts/clean.js"
