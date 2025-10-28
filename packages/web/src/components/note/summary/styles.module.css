@@ -34,12 +34,12 @@ details[data-name="note"][open] .container {
 
 .titleIcon {
   color: rgb(var(--gray-400));
-  height: 1rem;
-  margin: 0.275rem 0 0 auto;
+  height: 1.25rem;
+  margin: 0.1rem 0 0 auto;
   transition:
     transform 0.2s,
     color 0.2s;
-  width: 1rem;
+  width: 1.25rem;
 }
 
 details[data-name="note"][open] .titleIcon {
