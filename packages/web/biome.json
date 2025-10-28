@@ -3,6 +3,6 @@
   "root": false,
   "extends": "//",
   "files": {
-    "includes": ["**", "!dist"]
+    "includes": ["**", "!!dist"]
   }
 }
