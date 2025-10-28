@@ -3,7 +3,7 @@ packages:
 
 catalog:
   '@types/node': 22.18.12
-  hono: 4.10.3
+  hono: 4.9.12
   typescript: 5.9.3
   vite: 7.1.12
 

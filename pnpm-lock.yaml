@@ -10,8 +10,8 @@ catalogs:
       specifier: 22.18.12
       version: 22.18.12
     hono:
-      specifier: 4.10.3
-      version: 4.10.3
+      specifier: 4.9.12
+      version: 4.9.12
     typescript:
       specifier: 5.9.3
       version: 5.9.3
@@ -31,10 +31,10 @@ importers:
     dependencies:
       '@hono/node-server':
         specifier: 1.19.5
-        version: 1.19.5(hono@4.10.3)
+        version: 1.19.5(hono@4.9.12)
       '@hono/standard-validator':
         specifier: 0.1.5
-        version: 0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.3)
+        version: 0.1.5(@standard-schema/spec@1.0.0)(hono@4.9.12)
       '@libsql/client':
         specifier: 0.15.15
         version: 0.15.15
@@ -43,7 +43,7 @@ importers:
         version: 0.44.7(@libsql/client@0.15.15)(gel@2.0.2)
       hono:
         specifier: 'catalog:'
-        version: 4.10.3
+        version: 4.9.12
       valibot:
         specifier: 1.1.0
         version: 1.1.0(typescript@5.9.3)
@@ -77,7 +77,7 @@ importers:
         version: 22.18.12
       hono:
         specifier: 'catalog:'
-        version: 4.10.3
+        version: 4.9.12
       the-new-css-reset:
         specifier: 1.11.3
         version: 1.11.3
@@ -891,8 +891,8 @@ packages:
   get-tsconfig@4.13.0:
     resolution: {integrity: sha512-1VKTZJCwBrvbd+Wn3AOgQP/2Av+TfTCOlE4AcRJE72W1ksZXbAx8PPBR9RzgTeSPzlPMHrbANMH3LbltH73wxQ==}
 
-  hono@4.10.3:
-    resolution: {integrity: sha512-2LOYWUbnhdxdL8MNbNg9XZig6k+cZXm5IjHn2Aviv7honhBMOHb+jxrKIeJRZJRmn+htUCKhaicxwXuUDlchRA==}
+  hono@4.9.12:
+    resolution: {integrity: sha512-SrTC0YxqPwnN7yKa8gg/giLyQ2pILCKoideIHbYbFQlWZjYt68D2A4Ae1hehO/aDQ6RmTcpqOV/O2yBtMzx/VQ==}
     engines: {node: '>=16.9.0'}
 
   isexe@3.1.1:
@@ -1332,14 +1332,14 @@ snapshots:
   '@esbuild/win32-x64@0.25.11':
     optional: true
 
-  '@hono/node-server@1.19.5(hono@4.10.3)':
+  '@hono/node-server@1.19.5(hono@4.9.12)':
     dependencies:
-      hono: 4.10.3
+      hono: 4.9.12
 
-  '@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.3)':
+  '@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.9.12)':
     dependencies:
       '@standard-schema/spec': 1.0.0
-      hono: 4.10.3
+      hono: 4.9.12
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
@@ -1681,7 +1681,7 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  hono@4.10.3: {}
+  hono@4.9.12: {}
 
   isexe@3.1.1:
     optional: true
