@@ -37,13 +37,13 @@ details[data-name="note"][open] .container {
   height: 1.25rem;
   margin: 0.1rem 0 0 auto;
   transition:
-    transform 0.2s,
+    rotate 0.2s,
     color 0.2s;
   width: 1.25rem;
 }
 
 details[data-name="note"][open] .titleIcon {
-  transform: rotate(45deg);
+  rotate: 45deg;
 }
 
 @media (any-hover: hover) {
