@@ -1,6 +1,6 @@
 import { sql } from "drizzle-orm";
 import { migrate } from "drizzle-orm/libsql/migrator";
-import { beforeAll, beforeEach } from "vitest";
+import { beforeAll, beforeEach, vi } from "vitest";
 import db from "./client.js";
 
 /**
@@ -10,6 +10,7 @@ import db from "./client.js";
  * @see {@link https://orm.drizzle.team/docs/seed-overview#reset-database}
  */
 beforeAll(async () => {
+  vi.resetModules();
   await migrate(db, { migrationsFolder: "./db/migrations" });
 });
 

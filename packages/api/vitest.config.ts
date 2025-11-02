@@ -5,10 +5,7 @@ export default defineConfig({
   test: {
     env: loadEnv("testing", process.cwd(), ""),
     include: ["src/**/*.test.ts"],
-    poolOptions: {
-      forks: {
-        singleFork: true,
-      },
-    },
+    isolate: false,
+    maxWorkers: 1,
   },
 });
