@@ -15,19 +15,19 @@
   },
   "dependencies": {
     "@hono/node-server": "1.19.6",
-    "@hono/standard-validator": "0.1.5",
+    "@hono/standard-validator": "0.2.0",
     "@libsql/client": "0.15.15",
-    "drizzle-orm": "0.44.7",
+    "drizzle-orm": "0.45.0",
     "hono": "catalog:",
-    "valibot": "1.1.0"
+    "valibot": "1.2.0"
   },
   "devDependencies": {
     "@standard-schema/spec": "1.0.0",
     "@types/node": "catalog:",
-    "drizzle-kit": "0.31.7",
+    "drizzle-kit": "0.31.8",
     "tsx": "4.20.6",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "4.0.8"
+    "vitest": "4.0.15"
   }
 }
