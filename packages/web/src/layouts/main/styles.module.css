@@ -8,10 +8,10 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (width >= 48rem) {
   .container {
     margin: 4.5rem auto 0;
-    max-width: 768px;
+    max-width: 48rem;
     padding: 0;
   }
 }

@@ -5,7 +5,7 @@
   width: 90%;
 }
 
-@media (min-width: 768px) {
+@media (width >= 48rem) {
   .container {
     width: 35rem;
   }

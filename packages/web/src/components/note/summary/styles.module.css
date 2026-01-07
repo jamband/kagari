@@ -51,3 +51,8 @@ details[data-name="note"][open] .titleIcon {
     color: rgb(var(--gray-600));
   }
 }
+
+.container:active .titleIcon,
+.container:focus-visible .titleIcon {
+  color: rgb(var(--gray-600));
+}
