@@ -28,6 +28,6 @@
     "tsx": "4.21.0",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "4.0.16"
+    "vitest": "4.0.17"
   }
 }
