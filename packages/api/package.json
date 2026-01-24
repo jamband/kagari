@@ -14,8 +14,8 @@
     "clean": "node scripts/clean.js"
   },
   "dependencies": {
-    "@hono/node-server": "1.19.8",
-    "@hono/standard-validator": "0.2.1",
+    "@hono/node-server": "1.19.9",
+    "@hono/standard-validator": "0.2.2",
     "@libsql/client": "0.17.0",
     "drizzle-orm": "0.45.1",
     "hono": "catalog:",
@@ -28,6 +28,6 @@
     "tsx": "4.21.0",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "4.0.17"
+    "vitest": "4.0.18"
   }
 }
