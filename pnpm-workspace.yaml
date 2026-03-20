@@ -9,6 +9,5 @@ catalog:
 
 minimumReleaseAge: 1440
 
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - esbuild
+allowBuilds:
+  esbuild: true
