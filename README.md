@@ -21,7 +21,7 @@ web (frontend):
 
 ## requirements
 
-- node.js >= 22.x
+- node.js >= 24.x
 - pnpm >= see engines section in package.json
 - sqlite >= 3.x
 
