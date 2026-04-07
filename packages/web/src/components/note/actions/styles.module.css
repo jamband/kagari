@@ -12,21 +12,21 @@
   transition:
     background 0.2s,
     color 0.2s;
-}
 
-@media (any-hover: hover) {
-  .button:hover {
+  @media (any-hover: hover) {
+    &:hover {
+      background: rgb(var(--gray-400) / 25%);
+      color: rgb(var(--gray-600));
+    }
+  }
+
+  &:active,
+  &:focus-visible {
     background: rgb(var(--gray-400) / 25%);
     color: rgb(var(--gray-600));
   }
-}
 
-.button:active,
-.button:focus-visible {
-  background: rgb(var(--gray-400) / 25%);
-  color: rgb(var(--gray-600));
-}
-
-.button:disabled {
-  color: rgb(var(--gray-400));
+  &:disabled {
+    color: rgb(var(--gray-400));
+  }
 }

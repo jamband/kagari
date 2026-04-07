@@ -10,15 +10,15 @@
   color: rgb(var(--gray-400));
   text-decoration: underline;
   transition: color 0.2s;
-}
 
-.link:active,
-.link:focus-visible {
-  color: rgb(var(--gray-600));
-}
+  @media (any-hover: hover) {
+    &:hover {
+      color: rgb(var(--gray-600));
+    }
+  }
 
-@media (any-hover: hover) {
-  .link:hover {
+  &:active,
+  &:focus-visible {
     color: rgb(var(--gray-600));
   }
 }

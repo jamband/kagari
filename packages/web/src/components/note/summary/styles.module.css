@@ -4,10 +4,10 @@
   display: flex;
   gap: 0.375rem;
   padding: 0.75rem 1rem;
-}
 
-details[data-name="note"][open] .container {
-  border-radius: 0.25rem 0.25rem 0 0;
+  details[data-name="note"][open] & {
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
 }
 
 .pin {
@@ -40,10 +40,10 @@ details[data-name="note"][open] .container {
     rotate 0.2s,
     color 0.2s;
   width: 1.25rem;
-}
 
-details[data-name="note"][open] .titleIcon {
-  rotate: 45deg;
+  details[data-name="note"][open] & {
+    rotate: 45deg;
+  }
 }
 
 @media (any-hover: hover) {

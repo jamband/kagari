@@ -6,10 +6,8 @@
   margin: 4.5rem 0 0;
   padding: 0 1rem;
   width: 100%;
-}
 
-@media (width >= 48rem) {
-  .container {
+  @media (width >= 48rem) {
     margin: 4.5rem auto 0;
     max-width: 48rem;
     padding: 0;

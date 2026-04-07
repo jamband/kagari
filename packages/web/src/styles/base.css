@@ -17,17 +17,17 @@ body {
 button {
   cursor: pointer;
   user-select: none;
-}
 
-@media (any-hover: hover) {
-  button:hover:disabled {
-    cursor: not-allowed;
+  @media (any-hover: hover) {
+    &:hover:disabled {
+      cursor: not-allowed;
+      background: transparent;
+    }
+  }
+
+  &:active:disabled {
     background: transparent;
   }
-}
-
-button:active:disabled {
-  background: transparent;
 }
 
 summary {
@@ -66,14 +66,14 @@ dialog {
   overflow: visible;
   padding: 0;
   transition: 0.2s;
+
+  &::backdrop {
+    background: rgb(0 0 0 / 30%);
+    transition: 0.2s;
+  }
 }
 
-dialog::backdrop {
-  background: rgb(0 0 0 / 30%);
-  transition: 0.2s;
-}
-
-html:has(dialog[open]) {
+:root:has(:modal) {
   overflow: hidden;
 }
 
