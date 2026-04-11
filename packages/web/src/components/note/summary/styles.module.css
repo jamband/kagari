@@ -52,7 +52,6 @@
   }
 }
 
-.container:active .titleIcon,
-.container:focus-visible .titleIcon {
+.container:is(:active, :focus-visible) .titleIcon {
   color: rgb(var(--gray-600));
 }
