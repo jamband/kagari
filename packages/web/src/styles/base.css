@@ -1,16 +1,16 @@
 html {
-  background: rgb(var(--gray-100));
-  color: rgb(var(--gray-600));
-  font-family: system-ui, Arial, sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.6;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
+  background: rgb(var(--gray-100));
+  color: rgb(var(--gray-600));
   display: flex;
   flex-flow: column;
+  font-family: system-ui, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   min-height: 100vh;
 }
 
@@ -41,11 +41,13 @@ label {
   margin: 0 0 0 0.1rem;
 }
 
-input[type="text"] {
-  border-radius: 0.25rem;
-  color: rgb(var(--gray-600));
-  padding: 0.5rem 1rem;
-  width: 100%;
+input {
+  &[type="text"] {
+    border-radius: 0.25rem;
+    color: rgb(var(--gray-600));
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
 }
 
 textarea {
