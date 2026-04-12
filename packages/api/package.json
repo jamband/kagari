@@ -8,7 +8,7 @@
     "build": "pnpm clear && tsc -p tsconfig.build.json",
     "postbuild": "node --env-file=.env.staging scripts/postbuild.js",
     "preview": "node --env-file=.env.staging dist/server.js",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc",
     "test": "vitest --run",
     "clear": "node scripts/clear.js",
     "clean": "node scripts/clean.js"
