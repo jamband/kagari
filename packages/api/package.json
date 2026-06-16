@@ -25,10 +25,10 @@
     "@standard-schema/spec": "1.1.0",
     "@types/node": "catalog:",
     "drizzle-kit": "0.31.10",
-    "esbuild": "0.28.0",
-    "tsx": "4.22.3",
+    "esbuild": "0.28.1",
+    "tsx": "4.22.4",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "4.1.7"
+    "vitest": "4.1.8"
   }
 }
