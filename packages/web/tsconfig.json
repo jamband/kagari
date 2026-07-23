@@ -4,11 +4,9 @@
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "moduleResolution": "Bundler",
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "strict": true,
     "exactOptionalPropertyTypes": true,
     "types": ["node"]
   },
