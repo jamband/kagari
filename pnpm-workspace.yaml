@@ -3,9 +3,9 @@ packages:
 
 catalog:
   '@types/node': 24.13.3
-  hono: 4.12.31
+  hono: 4.13.3
   typescript: 7.0.2
-  vite: 8.1.5
+  vite: 8.2.1
 
 minimumReleaseAge: 4320
 
