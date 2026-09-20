@@ -5,6 +5,7 @@
     "skipLibCheck": true,
     "exactOptionalPropertyTypes": true,
     "noEmit": true,
+    "strict": true,
     "types": ["node"]
   }
 }

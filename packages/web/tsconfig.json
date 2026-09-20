@@ -7,6 +7,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "strict": true,
     "exactOptionalPropertyTypes": true,
     "types": ["node"]
   },
