@@ -10,7 +10,7 @@
     "clean": "pnpm run --parallel clean && node scripts/clean.js"
   },
   "engines": {
-    "pnpm": ">=11.15.1"
+    "pnpm": ">=11.27.0"
   },
   "dependencies": {
     "@biomejs/biome": "2.5.14"
