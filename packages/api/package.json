@@ -16,19 +16,19 @@
   "dependencies": {
     "@hono/node-server": "2.1.1",
     "@hono/standard-validator": "0.4.0",
-    "@libsql/client": "0.17.4",
-    "drizzle-orm": "0.45.2",
+    "@libsql/client": "0.18.0",
+    "drizzle-orm": "0.45.3",
     "hono": "catalog:",
-    "valibot": "1.4.2"
+    "valibot": "1.5.0"
   },
   "devDependencies": {
     "@standard-schema/spec": "1.1.0",
     "@types/node": "catalog:",
-    "drizzle-kit": "0.31.10",
+    "drizzle-kit": "0.31.11",
     "esbuild": "0.28.2",
-    "tsx": "4.23.12",
+    "tsx": "4.23.15",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "4.1.11"
+    "vitest": "5.0.1"
   }
 }
