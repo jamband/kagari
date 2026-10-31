@@ -40,10 +40,6 @@
     rotate 0.2s,
     color 0.2s;
   width: 1.25rem;
-
-  details[data-name="note"][open] & {
-    rotate: 45deg;
-  }
 }
 
 @media (any-hover: hover) {
@@ -54,4 +50,8 @@
 
 .container:is(:active, :focus-visible) .titleIcon {
   color: rgb(var(--gray-600));
+}
+
+details[data-name="note"][open] .titleIcon {
+  rotate: 45deg;
 }
